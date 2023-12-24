@@ -16,6 +16,10 @@ def export_root():
         return os.path.dirname(os.path.abspath(__file__))
 
 
+def is_package_selected():
+    return package_filename is not None
+
+
 def get_package(indicator_widget : tk.Label, next_button : tk.Button):
     filetypes = [
         ("PHP Zip Package", ".zip")

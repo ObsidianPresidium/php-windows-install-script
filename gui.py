@@ -138,7 +138,10 @@ def set_scene(scene_name=None):
         next_button.configure(state=scenes[current_scene][3][0], command=lambda: set_scene(scenes[current_scene][3][1]))
 
         # do these specific things when arriving at a scene
-        if current_scene == 3:
+        if current_scene == 1:
+            if func.is_package_selected():
+                next_button.configure(state="active")
+        elif current_scene == 3:
             func.install(install_progress_label, lambda: set_scene(4))
         elif current_scene == 4:
             next_button.configure(text="Finish")
